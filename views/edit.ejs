@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+	<div id="formulario" class="ui main text container segment">
+		<div class="ui huge header">Edit a Blog: "<%= foundBlog['title'] %>"</div>
+		<form action="/blogs/<%= foundBlog['_id'] %>?_method=PUT" method="POST" class="ui form">
+			<!--  -->
+			<div class="field">
+				<label for="">Title</label>
+				<input type="text" name="blogObjForm[title]" value="<%= foundBlog['title'] %>">
+				<!-- "blogObjForm[title]" syntax is specific to body-parser -->
+			</div>
+			<!--  -->
+			<div class="field">
+				<label for="">Image's URL</label>
+				<input type="text" name="blogObjForm[image]" value="<%= foundBlog['image'] %>">
+			</div>
+			<!--  -->
+			<div class="field">
+				<label for="">Comments</label>
+				<textarea name="blogObjForm[body]" id="" cols="30" rows="10" required ><%= foundBlog['body'] %></textarea>
+			</div>
+			<!--  -->
+			<button class="ui button" type="submit">Post!</button>
+		</form>	
+	</div>
+
+<% include ./partials/footer %>

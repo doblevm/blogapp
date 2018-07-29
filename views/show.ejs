@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+	<div class="ui main text container">
+		<div class="ui huge centered header"> <%= foundBlog['title'] %> </div>
+		<div class="ui top attached">
+			<div class="item">
+				<img src="<%= foundBlog['image'] %>" alt="" class="ui centered rounded image">
+				<div class="content">
+					<p class=""> <%= foundBlog['created'].toDateString() %></p>
+				</div>
+				<div class="description">
+					<p> <%- foundBlog['body'] %> </p>
+				</div>
+				<a class="ui blue basic button" href="/blogs/<%= foundBlog['_id'] %>/edit"><i class="edit icon"></i>Edit Post?</a>
+				<div id="deleteForm">
+					<form action="/blogs/<%= foundBlog['_id'] %>?_method=DELETE" method="POST">
+						<button class="ui red basic button"><i class="eraser icon"></i>Delete</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<% include ./partials/footer %>
+
+<!-- https://semantic-ui.com/elements/icon.html -->

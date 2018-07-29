@@ -1,0 +1,11 @@
+#logo {
+	font-size: 1.5em;
+}
+
+body {
+	padding-top: 5em;	
+}
+
+#deleteForm {
+	display: inline-block;
+}

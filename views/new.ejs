@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+	<div id="formulario" class="ui container main segment text">
+		<div class="ui huge header">Post a New Blog</div>
+		<form action="/blogs" method="POST" class="ui form">
+			<!--  -->
+			<div class="field">
+				<label for="">Title</label>
+				<input type="text" name="blogObjForm[title]" placeholder="Post's Title">
+				<!-- "blogObjForm[title]" syntax is specific to body-parser -->
+			</div>
+			<!--  -->
+			<div class="field">
+				<label for="">Image's URL</label>
+				<input type="text" name="blogObjForm[image]" placeholder="https://....">
+			</div>
+			<!--  -->
+			<div class="field">
+				<label for="">Comments</label>
+				<textarea name="blogObjForm[body]" id="" cols="30" rows="10" placeholder="Make some comments about your post..." required></textarea>
+			</div>
+			<!--  -->
+			<button class="ui button" type="submit">Post!</button>
+		</form>	
+	</div>
+
+<% include ./partials/footer %>
